@@ -27,11 +27,6 @@ export default {
   css: [
   ],
   /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-  ],
-  /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
@@ -46,6 +41,15 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios'
   ],
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '*',
+        component: resolve(__dirname, 'pages/404.vue')
+      })
+    }
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
