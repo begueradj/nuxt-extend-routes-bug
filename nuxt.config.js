@@ -45,7 +45,7 @@ export default {
     extendRoutes (routes, resolve) {
       routes.push({
         name: 'custom',
-        path: '*',
+        path: '*' + 'towns' + '(:[0-9].*)?/',
         component: resolve(__dirname, 'pages/404.vue')
       })
     }
